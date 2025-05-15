@@ -11,7 +11,7 @@ type LinkItem = {
 const LINKS: LinkItem[] = [
   {
     name: "Whatsapp",
-    url: "https://wa.me/5575983095954",
+    url: "https://wa.me/5575983094954",
     color: "bg-green-500",
   },
   {
