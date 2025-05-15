@@ -1,7 +1,4 @@
 "use client";
-
-import { useEffect, useState } from "react";
-
 type LinkItem = {
   name: string;
   url: string;
@@ -27,24 +24,13 @@ const LINKS: LinkItem[] = [
 ];
 
 export default function LinksPage() {
-  const [visits, setVisits] = useState<number | null>(null);
-  const [clicks, setClicks] = useState<Record<string, number>>({});
-
-  useEffect(() => {
-    fetch("/api/visits", { method: "POST" })
-      .then((res) => res.json())
-      .then((data) => setVisits(data.total));
-  }, []);
-
   const handleClick = async (linkName: string) => {
     const res = await fetch("/api/click", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ linkName }),
     });
-    const data = await res.json();
-
-    setClicks((prev) => ({ ...prev, [linkName]: data.clicks }));
+    await res.json();
   };
 
   return (
@@ -64,16 +50,10 @@ export default function LinksPage() {
               onClick={() => handleClick(name)}
               className={`${color} text-white py-3 rounded-lg text-center font-semibold hover:brightness-110 transition`}
             >
-              {name} {clicks[name] !== undefined && `(${clicks[name]})`}
+              {name}
             </a>
           ))}
         </div>
-
-        <p className="mt-6 text-center text-sm text-gray-500">
-          {visits !== null
-            ? `👁️ Visitantes últimos 24h: ${visits}`
-            : "Carregando visitas..."}
-        </p>
       </div>
     </main>
   );
