@@ -12,11 +12,95 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@theme {
+  --color-primary-50: #eef1f7;
+  --color-primary-100: #d3dbed;
+  --color-primary-200: #b7c4e3;
+  --color-primary-300: #9badd9;
+  --color-primary-400: #7f96cf;
+  --color-primary-500: #637fc5;
+  --color-primary-600: #3d6099;
+  --color-primary-700: #1e3a6e;
+  --color-primary-800: #15294d;
+  --color-primary-900: #0b1429;
+
+  --color-secondary-50: #e8f7fa;
+  --color-secondary-100: #d0f0f5;
+  --color-secondary-200: #a0e1eb;
+  --color-secondary-300: #71d2e0;
+  --color-secondary-400: #41c3d6;
+  --color-secondary-500: #36b5c5;
+  --color-secondary-600: #2a8c9a;
+  --color-secondary-700: #1f636f;
+  --color-secondary-800: #153b45;
+  --color-secondary-900: #0a1c1f;
+
+  --color-accent-50: #fef2e6;
+  --color-accent-100: #fddfbd;
+  --color-accent-200: #fbc788;
+  --color-accent-300: #f9af52;
+  --color-accent-400: #f7971d;
+  --color-accent-500: #e68710;
+  --color-accent-600: #b36908;
+  --color-accent-700: #804c06;
+  --color-accent-800: #4d2d03;
+  --color-accent-900: #1a0f01;
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-humanst: "Humanst521", sans-serif;
+  --font-ansage: "AnsageBlack", sans-serif;
+}
+
+@media (prefers-color-scheme: white) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+}
+
+@font-face {
+  font-family: "Humanst521";
+  src: url("./assets/fonts/hum521-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Humanst521";
+  src: url("./assets/fonts/hum521-italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Humanst521";
+  src: url("./assets/fonts/hum521-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Humanst521";
+  src: url("./assets/fonts/hum521-bold-italic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "AnsageBlack";
+  src: url("./assets/fonts/ansage-black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+.text-pp {
+  font-size: 10px;
+  line-height: 4px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
